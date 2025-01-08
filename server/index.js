@@ -18,13 +18,15 @@ app.use(express.urlencoded({ extended: false }));
 
 //importing routes
 const userRoute = require("./routes/user");
+const  productRoute = require("./routes/product");
 
 //connecting database
 const dbConnect = require("./config/database");
 dbConnect();
 
 //Route handeling(route import and mount)
-app.use("/user", userRoute);
+app.use("/api/users", userRoute);
+app.use("/api/products", productRoute);
 
 
 //port listening
